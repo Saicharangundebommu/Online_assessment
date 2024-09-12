@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and JavaScript Basics Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header1">
+            <h1>HTML and JavaScript Basics Quiz</h1><br><br>
+            
+            <!-- Login Form -->
+            <div id="loginForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br><br>
+                <label for="dob">Date of Birth (YYYY-MM-DD):</label>
+                <input type="text" id="dob" required><br><br><br>
+                <button type="button" onclick="startExam()">Start Exam</button>
+            </div>
+        </div>
+        
+        <!-- User Details Box -->
+        <div id="userDetails" class="user-details" style="display: none;">
+            <p><strong>Name:</strong> <span id="displayName"></span></p>
+        </div>
+
+        <!-- Timer Display -->
+        <div id="timerDisplay" style="display: none;">
+            Time Left: <span id="timeRemaining">30:00</span> minutes
+        </div>
+        
+        <!-- Topic Selection -->
+        <div id="topicSelection" style="display: none;">
+            <label for="quizSelection">Select a topic:</label>
+            <select id="quizSelection">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+            <br><br>
+            <button type="button" onclick="startQuiz()">Enter</button>
+        </div>
+
+        <!-- Quiz Form -->
+        <form id="assessmentForm" style="display: none;">
+            <div id="questionsContainer"></div>
+            
+            <center>
+                <button type="button" onclick="submitAssessment()">Submit</button>
+                <input type="reset" value="Reset">
+            </center>
+        </form>
+
+        <!-- Result Display -->
+        <div id="result" style="display: none;">
+            <p id="score"></p>
+            <p id="correctWrongCounts"></p>
+            <p id="congratulations" style="display: none;">Congratulations! You have qualified the test.</p>
+            <button id="certificateButton" style="display: none;" onclick="generateCertificate()">Generate Certificate</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
